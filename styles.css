@@ -1,0 +1,1289 @@
+/* =========================================================
+   THEME VARIABLES
+   ========================================================= */
+
+   :root {
+    --bg-primary: #0a0f1c;
+    --bg-secondary: #111827;
+    --bg-card: #151e2e;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --accent: #38bdf8;
+    --accent-hover: #0ea5e9;
+
+    --border: rgba(148, 163, 184, 0.15);
+
+    --max-width: 1150px;
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+body.light-mode {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+
+    --accent: #0284c7;
+    --accent-hover: #0369a1;
+
+    --border: rgba(15, 23, 42, 0.15);
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    line-height: 1.7;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+section {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: var(--bg-primary);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    color: var(--text-primary);
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    transition: var(--transition);
+}
+
+
+.logo:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    color: var(--text-secondary);
+
+    font-size: 0.95rem;
+
+    transition: var(--transition);
+}
+
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+
+/* Underline animation */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition: var(--transition);
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAVIGATION CONTROLS
+   ========================================================= */
+
+.nav-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--bg-card);
+
+    color: var(--text-primary);
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+    transform: rotate(15deg) scale(1.05);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+.menu-toggle span {
+    display: block;
+
+    width: 20px;
+    height: 2px;
+
+    background: var(--text-primary);
+
+    transition: var(--transition);
+}
+
+
+/* =========================================================
+   GENERAL SECTION STYLES
+   ========================================================= */
+
+.section {
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+
+.section-heading p {
+    color: var(--accent);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+
+    line-height: 1.2;
+}
+
+
+.section-intro {
+    max-width: 650px;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 130px 25px 80px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+.hero-greeting {
+    color: var(--accent);
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h2 {
+    color: var(--text-secondary);
+
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-description {
+    max-width: 650px;
+
+    color: var(--text-secondary);
+
+    font-size: 1.05rem;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    border: 1px solid transparent;
+
+    transition: var(--transition);
+}
+
+
+.primary-btn {
+    background: var(--accent);
+
+    color: #06121c;
+}
+
+
+.primary-btn:hover {
+    background: var(--accent-hover);
+
+    transform: translateY(-2px);
+}
+
+
+.secondary-btn {
+    border-color: var(--border);
+
+    color: var(--text-primary);
+}
+
+
+.secondary-btn:hover {
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-image {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid rgba(56, 189, 248, 0.15);
+
+    box-shadow:
+        0 0 0 10px rgba(56, 189, 248, 0.04),
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    transition: var(--transition);
+}
+
+
+.hero-image img:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    margin-top: 40px;
+}
+
+
+.about-text p {
+    color: var(--text-secondary);
+
+    margin-bottom: 20px;
+}
+
+
+.about-highlights {
+    display: grid;
+
+    gap: 15px;
+}
+
+
+.highlight {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    transition: var(--transition);
+}
+
+
+.highlight:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+
+.highlight h3 {
+    margin-bottom: 8px;
+
+    font-size: 1.1rem;
+}
+
+
+.highlight p {
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.project-card {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(56, 189, 248, 0.4);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+
+.project-content {
+    padding: 30px;
+}
+
+
+.project-number {
+    color: var(--accent);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.project-card h3 {
+    font-size: 1.4rem;
+
+    margin-bottom: 12px;
+}
+
+
+.project-card p:not(.project-number) {
+    color: var(--text-secondary);
+
+    font-size: 0.95rem;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
+.tech-stack {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+
+.tech-stack span {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(56, 189, 248, 0.08);
+
+    color: var(--accent);
+
+    border: 1px solid rgba(56, 189, 248, 0.15);
+
+    font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   PROJECT LINKS
+   ========================================================= */
+
+.project-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+
+.project-links a {
+    color: var(--text-primary);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+.project-links a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills {
+    border-top: 1px solid var(--border);
+}
+
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-top: 40px;
+}
+
+
+.skill-card {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    transition: var(--transition);
+}
+
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+
+.skill-card h3 {
+    color: var(--accent);
+
+    margin-bottom: 15px;
+}
+
+
+.skill-card li {
+    color: var(--text-secondary);
+
+    margin-bottom: 8px;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    border-top: 1px solid var(--border);
+}
+
+
+.contact-content {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 70px;
+
+    margin-top: 40px;
+}
+
+
+.contact-info h3 {
+    font-size: 1.8rem;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-info > p {
+    color: var(--text-secondary);
+
+    margin-bottom: 30px;
+}
+
+
+.contact-details {
+    display: grid;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.contact-details p {
+    color: var(--text-secondary);
+}
+
+
+.contact-details strong {
+    color: var(--text-primary);
+}
+
+
+.contact-details a {
+    color: var(--accent);
+}
+
+
+.social-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+
+.social-links a {
+    color: var(--text-secondary);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.form-group label {
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    color: var(--text-primary);
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #64748b;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.08);
+}
+
+
+.contact-form .btn {
+    align-self: flex-start;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    padding: 30px 25px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 120px;
+    }
+
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    .hero-image {
+        order: -1;
+    }
+
+
+    .hero-image img {
+        width: 230px;
+        height: 230px;
+    }
+
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* -------------------------
+       MOBILE NAVBAR
+       ------------------------- */
+
+    .navbar {
+        flex-direction: row;
+
+        min-height: 70px;
+
+        padding: 0 20px;
+    }
+
+
+    .nav-controls {
+        gap: 10px;
+    }
+
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+
+        left: 20px;
+        right: 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        background: var(--bg-secondary);
+
+        border: 1px solid var(--border);
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.2);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+
+    .nav-links.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    .nav-links li {
+        width: 100%;
+    }
+
+
+    .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 15px;
+
+        border-radius: 8px;
+
+        font-size: 0.9rem;
+    }
+
+
+    .nav-links a:hover {
+        background: rgba(56, 189, 248, 0.08);
+    }
+
+
+    .nav-links a::after {
+        display: none;
+    }
+
+
+    /* Light mode mobile dropdown */
+
+    body.light-mode .nav-links {
+        background: #ffffff;
+
+        border-color: rgba(15, 23, 42, 0.12);
+
+        box-shadow:
+            0 15px 40px rgba(15, 23, 42, 0.12);
+    }
+
+
+    /* -------------------------
+       MOBILE MENU BUTTON
+       ------------------------- */
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* Hamburger → X */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform:
+            translateY(7px)
+            rotate(45deg);
+    }
+
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .menu-toggle.active span:nth-child(3) {
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+    }
+
+
+    /* -------------------------
+       MOBILE HERO
+       ------------------------- */
+
+    .hero {
+        padding-top: 150px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .btn {
+        width: 100%;
+    }
+
+
+    /* -------------------------
+       MOBILE SECTIONS
+       ------------------------- */
+
+    .section {
+        padding: 75px 20px;
+    }
+
+
+    /* -------------------------
+       MOBILE PROJECTS
+       ------------------------- */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-content {
+        padding: 25px;
+    }
+
+
+    /* -------------------------
+       MOBILE SKILLS
+       ------------------------- */
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -------------------------
+       MOBILE CONTACT
+       ------------------------- */
+
+    .contact-form .btn {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   FORM STATUS MESSAGE
+   ========================================================= */
+
+   .form-status {
+    min-height: 24px;
+
+    margin-top: 5px;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    opacity: 0;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.form-status.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.form-status.success {
+    color: #16a34a;
+}
+
+
+.form-status.error {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+#submit-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.spinner {
+    display: inline-block;
+
+    width: 14px;
+    height: 14px;
+
+    margin-right: 8px;
+
+    border: 2px solid currentColor;
+
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    animation: spin 0.7s linear infinite;
+
+    vertical-align: -2px;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
